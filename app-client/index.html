@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html manifest="cache.appcache">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>Offline video playback system</title>
+    <link rel="icon" href="coding-fev.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="blended_grid">
+        <div class="pageHeader"></div>
+
+        <!-- Main container -->
+        <div class="pageContent">
+            <h1 style="font-size: 26px;">Offline video playback system</h1>
+
+            <br>
+
+            <div style="float:left; margin-right: 15px; border-right: 2px solid #ccc;">
+
+                <!-- JS sets this up to run on or offline after the download -->
+                <video controls=""
+                    poster="img/poster.jpg"
+                    width="450"
+                    height="253"
+                    preload="auto"
+                    style="padding-right: 15px;">Your browser does not support the video element</video>
+
+            </div>
+
+            <div style="float:left;">
+
+                <!-- online only playback -->
+                <video controls=""
+                    poster="img/poster.jpg"
+                    width="450"
+                    height="253"
+                    preload="none">
+                    <source src="http://127.0.0.1:8081/index.php/get-blob/1" type="video/mp4">
+                </video>
+
+            </div>
+        </div>
+
+        <div class="pageFooter">
+            <h3>References</h3>
+            <ul>
+                <li><a href="http://electron.atom.io/">http://electron.atom.io/</a></li>
+                <li><a href="http://www.codingsection.com/create-your-own-offline-video-playback-system-like-youtube.html">http://www.codingsection.com/create-your-own-offline-video-playback-system-like-youtube.html</a></li>
+                <li><a href="http://silex.sensiolabs.org/doc/usage.html#streaming">http://silex.sensiolabs.org</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="js/offline.js"></script>
+</body>
+</html>
