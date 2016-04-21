@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="cache.appcache">
+<html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" type="text/css" href="css/main.css">
@@ -27,32 +27,22 @@
                     style="padding-right: 15px;">Your browser does not support the video element</video>
 
             </div>
-
-            <div style="float:left;">
-
-                <!-- online only playback -->
-                <video controls=""
-                    poster="img/poster.jpg"
-                    width="450"
-                    height="253"
-                    preload="none">
-                    <source src="http://127.0.0.1:8081/index.php/get-blob/1" type="video/mp4">
-                </video>
-
-            </div>
         </div>
 
         <div class="pageFooter">
+
+            <p><button type="button" id="deleteLocal">Click to Delete local video</button></p>
+
             <h3>References</h3>
             <ul>
                 <li><a href="http://electron.atom.io/">http://electron.atom.io/</a></li>
                 <li><a href="http://www.codingsection.com/create-your-own-offline-video-playback-system-like-youtube.html">http://www.codingsection.com/create-your-own-offline-video-playback-system-like-youtube.html</a></li>
                 <li><a href="http://silex.sensiolabs.org/doc/usage.html#streaming">http://silex.sensiolabs.org</a></li>
+                <li><a href="https://github.com/electron/electron/issues/4550">Reference to Electron max IndexDB space available</a></li>
             </ul>
         </div>
     </div>
 
-    <script src="main.js"></script>
     <script src="js/offline.js"></script>
 </body>
 </html>

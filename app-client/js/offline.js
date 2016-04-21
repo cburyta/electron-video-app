@@ -5,7 +5,7 @@ var db_name = "client-video-database";
 var video_obj = "client-video-object";
 var video_key = "client-video-key";
 var video_file = "offline.mp4";
-var video_file_offline_mp4 = video_file;
+// var video_file_offline_mp4 = video_file;
 
 var video_url = 'http://127.0.0.1:8081/index.php/get-blob/1';
 var db;
@@ -73,6 +73,7 @@ var getVideoDataStream = function (video_file) {
     xhr.addEventListener("load", function () {
         if (xhr.status === 200) {
             binary_data = xhr.response;
+            console.log('Video downloaded, saving in the database');
             putDataInDb(binary_data);
         }
     }, false);
@@ -117,4 +118,23 @@ var putDataInDb = function (blob) {
     console.log('blob', blob);
     isVideoAvailableOffline(transaction);
 };
+
+// onclick of the 'delete local content' button we need to be sure to remove data local
+document.getElementById("deleteLocal").addEventListener("click", function (e) {
+    // report on the success of opening the transaction
+    var transaction = db.transaction([video_obj], "readwrite");
+    transaction.oncomplete = function(event) { console.log('Transaction completed: database modification finished'); };
+    transaction.onerror = function(event) { console.log('Transaction not opened due to error: ' + transaction.error); };
+
+    var objectStore = transaction.objectStore(video_obj);
+    var objectStoreRequest = objectStore.delete(video_key);
+
+    objectStoreRequest.onsuccess = function(event) {
+        // report the success of our delete operation
+        console.log('Record deleted');
+
+        // reloaad the page
+        window.location.reload();
+    };
+});
 

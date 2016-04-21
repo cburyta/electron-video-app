@@ -10,7 +10,7 @@ background-size : 100% auto;
 .blended_grid{
 display : block;
 width : 1110px;
-overflow : auto;
+/* overflow : auto; */
 margin : 5px auto 0 auto;
 }
 .pageHeader{
@@ -31,7 +31,6 @@ width : 160px;
 .pageContent{
 float : left;
 clear : none;
-min-height : 520px;
 width : 1100px;
 padding: 10px 5px 10px 5px;
 }
