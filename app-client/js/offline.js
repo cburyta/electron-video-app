@@ -8,6 +8,7 @@ var video_file = "offline.mp4";
 // var video_file_offline_mp4 = video_file;
 
 var video_url = 'http://127.0.0.1:8081/index.php/get-blob/1';
+// var video_url = 'http://192.168.0.24:8081/index.php/get-blob/1';
 var db;
 
 // setup the db request

@@ -24,8 +24,29 @@ Setup
 Compile
 =======
 
-    # after vendors are available, run the following to start the desktop app
+This is to compile locally and run for debugging. After vendors are available, run the following to
+start the desktop app.
+
     npm start
+
+Package / Deliver
+=================
+
+Electron seems a bit vague in how to manually package the app, but there are tools such as electron-packager
+that allow this to be a bit more automated.
+
+One time install (can be saved to package.json so npm install fetch's)
+
+    npm install --save-dev electron-packager
+
+Run the packager to package
+
+    ./node_modules/.bin/electron-packager . --all
+
+### Note
+
+You'll get OSX / Linux apps when building on OSX, and Windows when running on windows. There are ways to compile both
+from OSX - e.g. with Wine via Homebrew installed. See documents for electron-packager for more info.
 
 Deactivate (Nodeenv)
 ====================
@@ -47,5 +68,6 @@ Notes on this repos creation
 Reference
 =========
 
-- http://electron.atom.io/#get-started
+- http://electron.atom.io
+- https://github.com/electron-userland/electron-packager
 

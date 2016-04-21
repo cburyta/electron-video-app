@@ -1,7 +1,8 @@
 {
-  "name": "electron-quick-start",
+  "name": "electron-video-test",
+  "productName": "Electron Video Test",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A minimal Electron application to test local store video",
   "main": "main.js",
   "scripts": {
     "start": "electron main.js"
@@ -23,6 +24,7 @@
   },
   "homepage": "https://github.com/electron/electron-quick-start#readme",
   "devDependencies": {
+    "electron-packager": "^7.0.0",
     "electron-prebuilt": "^0.37.0"
   }
 }
